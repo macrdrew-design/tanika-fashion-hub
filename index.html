@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TANIKA FASHION HUB</title>
+<meta name="description" content="Discover African fashion, beauty and designer products from Ghana and Nigeria.">
+<style>
+:root {
+  --black:#171714;
+  --gold:#c5a15b;
+  --cream:#f8f5ee;
+  --white:#fff;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;color:var(--black);background:white}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font:inherit}
+.top{background:var(--black);color:white;text-align:center;padding:10px;font-size:12px}
+header{padding:18px 5%;border-bottom:1px solid #eee;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.logo{font-size:25px;font-weight:900;letter-spacing:2px}
+.logo span{color:var(--gold)}
+nav{display:flex;gap:20px;font-size:13px;flex-wrap:wrap}
+nav a:hover{color:var(--gold)}
+.actions{display:flex;gap:12px;align-items:center;font-size:13px}
+.btn{background:var(--gold);color:#171714;padding:12px 18px;border:0;font-weight:bold;border-radius:3px}
+.btn-dark{background:var(--black);color:white}
+.hero{background:var(--cream);padding:65px 7%;display:grid;grid-template-columns:1.1fr 1fr;gap:35px;align-items:center}
+.eyebrow{color:#98763b;letter-spacing:3px;font-size:12px;font-weight:bold}
+h1{font-size:clamp(38px,5vw,65px);line-height:1.06;margin:18px 0}
+.hero p{line-height:1.8;color:#666;max-width:480px}
+.hero img{width:100%;height:400px;object-fit:cover;border-radius:4px}
+section{padding:45px 5%}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:25px}
+h2{font-size:28px;margin:0}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.category{background:var(--cream);padding:25px;text-align:center;border:1px solid #eee}
+.category strong{display:block;margin-bottom:8px}
+.category span{font-size:12px;color:#777}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:25px}
+input,select{padding:12px;border:1px solid #ddd;border-radius:3px;background:white}
+#search{flex:1;min-width:180px}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.product{border:1px solid #eee;padding:12px}
+.product img{width:100%;height:240px;object-fit:cover;background:var(--cream)}
+.product h3{font-size:15px;margin:12px 0 6px}
+.product small{color:#777}
+.price{font-weight:bold;margin:10px 0}
+.product button{width:100%;padding:10px;border:1px solid var(--black);background:white}
+.product button:hover{background:var(--black);color:white}
+.banner{background:var(--black);color:white;padding:45px 7%;display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap}
+.banner h2{font-size:32px;margin-bottom:10px}
+.banner p{color:#ccc;line-height:1.7}
+footer{background:#111;color:#ddd;padding:35px 5%;display:grid;grid-template-columns:2fr 1fr 1fr;gap:25px}
+footer p,footer a{font-size:13px;color:#bbb;line-height:1.8}
+footer h3{color:var(--gold)}
+#cart-count{background:var(--gold);color:black;padding:3px 7px;border-radius:50%}
+@media(max-width:800px){
+ .hero{grid-template-columns:1fr;padding:40px 5%}
+ .hero img{height:300px}
+ .categories{grid-template-columns:repeat(2,1fr)}
+ .products{grid-template-columns:repeat(2,1fr)}
+ nav{order:3;width:100%}
+ footer{grid-template-columns:1fr}
+}
+@media(max-width:420px){
+ .products{grid-template-columns:1fr 1fr;gap:10px}
+ .product img{height:170px}
+ .logo{font-size:20px}
+}
+</style>
+</head>
+<body>
+
+<div class="top">HUB-BASED DELIVERY · BUILT FOR AFRICA</div>
+
+<header>
+  <a class="logo" href="#">TANIKA<span>.</span></a>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#shop">Shop All</a>
+    <a href="#categories">Categories</a>
+    <a href="#factory">Factory Direct</a>
+    <a href="#sell">Earn with TANIKA</a>
+  </nav>
+  <div class="actions">
+    <a href="#track">Track Order</a>
+    <a href="#help">Help</a>
+    <a href="#signin">Sign In</a>
+    <a href="#cart">Bag <span id="cart-count">0</span></a>
+  </div>
+</header>
+
+<div class="hero">
+  <div>
+    <div class="eyebrow">AFRICAN FASHION · GLOBAL STYLE</div>
+    <h1>Discover Africa.<br>Wear Your Story.</h1>
+    <p>Shop fashion, beauty and lifestyle products from African designers, brands and trusted vendors in Ghana, Nigeria and beyond.</p>
+    <a class="btn" href="#shop">SHOP COLLECTION</a>
+    &nbsp;
+    <a class="btn btn-dark" href="#sell">START SELLING</a>
+  </div>
+  <img src="https://images.unsplash.com/photo-153910 rack?auto=format&fit=crop&w=900&q=85"
+       alt="African fashion collection"
+       onerror="this.src='https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=900&q=85'">
+</div>
+
+<section id="categories">
+  <div class="section-head">
+    <h2>Shop by Category</h2>
+    <a href="#shop">View All →</a>
+  </div>
+  <div class="categories">
+    <a class="category" href="#shop" onclick="choose('Fashion')"><strong>Fashion</strong><span>Clothing & designers</span></a>
+    <a class="category" href="#shop" onclick="choose('Shoes')"><strong>Shoes & Bags</strong><span>Style essentials</span></a>
+    <a class="category" href="#shop" onclick="choose('Beauty')"><strong>Health & Beauty</strong><span>Beauty discoveries</span></a>
+    <a class="category" href="#shop" onclick="choose('Accessories')"><strong>Accessories</strong><span>Complete your look</span></a>
+  </div>
+</section>
+
+<section id="shop">
+  <div class="section-head">
+    <h2>Shop All Products</h2>
+    <span>Discover African brands</span>
+  </div>
+  <div class="filters">
+    <input id="search" placeholder="Search products or designers..." oninput="render()">
+    <select id="category" onchange="render()">
+      <option value="All">All Categories</option>
+      <option>Fashion</option><option>Shoes</option><option>Beauty</option><option>Accessories</option>
+    </select>
+    <select id="price" onchange="render()">
+      <option value="all">Any Price</option>
+      <option value="500">Under GH₵500</option>
+      <option value="1000">Under GH₵1,000</option>
+    </select>
+  </div>
+  <div class="products" id="products"></div>
+  <p style="font-size:12px;color:#888;margin-top:20px">Demo products and prices. Real vendor listings will be connected to the database.</p>
+</section>
+
+<section class="banner" id="factory">
+  <div>
+    <div class="eyebrow">FOR RETAILERS & BUSINESSES</div>
+    <h2>Factory Direct. Buy in Bulk.</h2>
+    <p>Connect with African manufacturers, clothing factories and wholesale suppliers.</p>
+  </div>
+  <a class="btn" href="#sell">EXPLORE FACTORY DIRECT</a>
+</section>
+
+<section id="sell">
+  <div class="section-head">
+    <h2>Earn with TANIKA</h2>
+    <span>Grow your business with us</span>
+  </div>
+  <div class="categories">
+    <div class="category"><strong>Marketplace Seller</strong><span>List products and earn from sales.</span><br><br><a class="btn" href="#signin">Start Selling</a></div>
+    <div class="category"><strong>Social Commerce</strong><span>Share products on WhatsApp and TikTok.</span><br><br><a class="btn" href="#signin">Join Now</a></div>
+    <div class="category"><strong>Factory Direct</strong><span>Sell wholesale to business buyers.</span><br><br><a class="btn" href="#signin">Register Factory</a></div>
+    <div class="category"><strong>Hub Partner</strong><span>Earn on eligible parcels and deliveries.</span><br><br><a class="btn" href="#signin">Become a Partner</a></div>
+  </div>
+</section>
+
+<section id="track" style="background:var(--cream)">
+  <h2>Track Your Order</h2>
+  <p>Enter your order number to check its status.</p>
+  <input id="order" placeholder="Enter order number">
+  <button class="btn" onclick="alert('Order tracking will be connected when the order database is configured.')">Track Order</button>
+</section>
+
+<footer>
+  <div><a class="logo" href="#">TANIKA<span>.</span></a><p>Connecting African Fashion to Africa and the World.</p><p>Ghana · Nigeria · Africa</p></div>
+  <div><h3>Shop</h3><a href="#shop">All Products</a><br><a href="#categories">Categories</a><br><a href="#factory">Factory Direct</a></div>
+  <div><h3>Help & Business</h3><a href="#track">Track Order</a><br><a href="#sell">Start Selling</a><br><a href="#help">Contact Support</a></div>
+</footer>
+
+<script>
+const items=[
+ {name:"Ankara Heritage Dress",category:"Fashion",price:450,country:"Nigeria",image:"https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=600&q=80"},
+ {name:"African Designer Set",category:"Fashion",price:680,country:"Ghana",image:"https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80"},
+ {name:"Classic Leather Handbag",category:"Accessories",price:320,country:"Ghana",image:"https://images.unsplash.com/photo- if?auto=format&fit=crop&w=600&q=80"},
+ {name:"Designer Sneakers",category:"Shoes",price:520,country:"Nigeria",image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80"},
+ {name:"Beauty Essentials Set",category:"Beauty",price:250,country:"Ghana",image:"https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=600&q=80"},
+ {name:"African Print Shirt",category:"Fashion",price:280,country:"Nigeria",image:"https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=600&q=80"},
+ {name:"Gold Tone Accessories",category:"Accessories",price:190,country:"Ghana",image:"https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=600&q=80"},
+ {name:"Modern Fashion Shoes",category:"Shoes",price:390,country:"Nigeria",image:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=600&q=80"}
+];
+let cart=0;
+function choose(c){document.getElementById("category").value=c;render()}
+function render(){
+ const q=document.getElementById("search").value.toLowerCase();
+ const c=document.getElementById("category").value;
+ const p=document.getElementById("price").value;
+ const filtered=items.filter(x=>(x.name.toLowerCase().includes(q)||x.country.toLowerCase().includes(q))&&(c==="All"||x.category===c)&&(p==="all"||x.price<Number(p)));
+ document.getElementById("products").innerHTML=filtered.map(x=>`
+ <article class="product">
+ <img src="${x.image}" alt="${x.name}" onerror="this.style.display='none'">
+ <small>${x.country} · Demo vendor</small>
+ <h3>${x.name}</h3>
+ <div class="price">GH₵ ${x.price.toFixed(2)}</div>
+ <button onclick="add()">Add to Bag</button>
+ </article>`).join("")||"<p>No products found.</p>";
+}
+function add(){cart++;document.getElementById("cart-count").textContent=cart}
+render();
+</script>
+</body>
+  </html>
+  
